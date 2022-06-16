@@ -15,7 +15,7 @@ function CoinPage() {
   },[url])
 
   return (
-    <div>CoinPage</div>
+    <div>CoinPage!!!</div>
   )
 }
 
