@@ -1,13 +1,19 @@
 import React from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import {Link} from 'react-router-dom'
+
 
 function CoinItem({coin}) {
     return (
             <tr className='h-[80px] border-b overflow-hidden'>
                 <td><AiOutlineStar /></td>
                 <td>{coin.market_cap_rank}</td>
-                <td><div className='flex items-center'><img className='w-6 mr-2 rounded-full' src={coin.image} alt={coin.id} /><p className='hidden sm:table-cell'>{coin.name}</p></div></td>
+                <td>
+                    <Link to={`/coin/${coin.id}` }>
+                        <div className='flex items-center'><img className='w-6 mr-2 rounded-full' src={coin.image} alt={coin.id} /><p className='hidden sm:table-cell'>{coin.name}</p></div>
+                    </Link>
+                </td>
                 <td>{coin.symbol.toUpperCase()}</td>
                 <td>${coin.current_price.toLocaleString()}</td>
                 <td>
